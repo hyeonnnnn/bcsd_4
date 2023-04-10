@@ -12,8 +12,21 @@ public class LifeCycle : MonoBehaviour
 
         // Translate : 벡터 값을 '현재 위치에 더하는' 함수
 
-        Vector3 vec = new Vector3(5, 0, 0); // 벡터값 
+        // Vector3 vec = new Vector3(5, 0, 0); // 벡터값, (x+5, y+0, z+0)
+        // transform.Translate(vec);
+
+    }
+
+    void Update()
+    {
+        // 카메라에도 추가하면 같이 움직임
+        // Vector3 vec = new Vector3(0, 0.1f, 0);
+        // transform.Translate(vec);
+
+        Vector3 vec = new Vector3( // 키를 이용하여 오브젝트 이동
+            Input.GetAxis("Horizontal"), 
+            Input.GetAxis("Vertical"), 
+            0);
         transform.Translate(vec);
-   
     }
 }
